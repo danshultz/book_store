@@ -1,0 +1,30 @@
+<h1>Shopping Cart</h1>
+<% if books.empty? %>
+  <div>Your cart is empty</div>
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% books.each do |book| %>
+  <tr>
+    <td><%= book.title %></td>
+    <td><%= book.price %></td>
+    <td>
+      <%= form_for(book, :url => shopping_cart_url, :method => :delete) do |f|%>
+        <%= f.hidden_field(:id) %>
+        <%= f.submit("Remove from cart") %>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+
+</table>
+
+<% end %>
+

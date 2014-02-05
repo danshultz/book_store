@@ -36,6 +36,13 @@
         <td><%= book.drm_id %></td>
         <td><%= book.author %></td>
         <td><%= book.distribution_model %></td>
+        <td>
+          <%= form_for(book, :url => shopping_cart_path) do |f| %>
+            <%= f.hidden_field(:id) %>
+            <%= f.submit("Add to Cart") %>
+          <% end %>
+        </td>
+        <td><%= link_to 'Add to Cart', book %></td>
         <td><%= link_to 'Show', book %></td>
       </tr>
     <% end %>
