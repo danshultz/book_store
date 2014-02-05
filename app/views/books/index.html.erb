@@ -37,8 +37,6 @@
         <td><%= book.author %></td>
         <td><%= book.distribution_model %></td>
         <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,4 +44,3 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
