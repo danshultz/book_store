@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Short description:</strong>
+  <%= @book.short_description %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @book.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @book.price %>
+</p>
+
+<p>
+  <strong>Cr:</strong>
+  <%= @book.cr_id %>
+</p>
+
+<p>
+  <strong>Sample url:</strong>
+  <%= @book.sample_url %>
+</p>
+
+<p>
+  <strong>Isbn:</strong>
+  <%= @book.isbn %>
+</p>
+
+<p>
+  <strong>Cover image:</strong>
+  <%= @book.cover_image %>
+</p>
+
+<p>
+  <strong>Format type:</strong>
+  <%= @book.format_type %>
+</p>
+
+<p>
+  <strong>Drm:</strong>
+  <%= @book.drm_id %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Distribution model:</strong>
+  <%= @book.distribution_model %>
+</p>
+
+<%= link_to 'Edit', edit_admin_book_path(@book) %> |
+<%= link_to 'Back', admin_books_path %>

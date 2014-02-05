@@ -1,0 +1,8 @@
+<h1>Editing book</h1>
+
+<%= form_for(@book, :url => admin_book_path(@book)) do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Show', @book %> |
+<%= link_to 'Back', admin_books_path %>
