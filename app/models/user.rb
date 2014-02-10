@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
     :trackable,
     :validatable
   )
+
+  has_and_belongs_to_many :roles
 end
