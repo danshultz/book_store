@@ -33,6 +33,7 @@ namespace(:seed) {
   desc("resets basic seed data")
   task(:reset => :environment) {
     Book.delete_all
+    User.delete_all
     Rake::Task["seed:data"].invoke
     Rake::Task["seed:user"].invoke
   }
