@@ -1,0 +1,22 @@
+<h1>Checkout Summary</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cart.books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+<strong>Total: <%= @cart.total %></strong>
+</p>
