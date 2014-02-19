@@ -20,3 +20,50 @@
 <p>
 <strong>Total: <%= @cart.total %></strong>
 </p>
+
+<h4>Enter a billing address</h4>
+<%= form_for :address do |f| %>
+  <p>
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name %>
+  </p>
+
+  <p>
+    <%= f.label :address1 %><br/>
+    <%= f.text_field :address1 %>
+  </p>
+
+  <p>
+    <%= f.label :address2 %><br/>
+    <%= f.text_field :address2 %>
+  </p>
+
+  <p>
+    <%= f.label :city %><br/>
+    <%= f.text_field :city %>
+  </p>
+  
+  <p>
+    <%= f.label :state %><br/>
+    <%= f.text_field :state %>
+  </p>
+
+  <p>
+    <%= f.label :postal_code %><br/>
+    <%= f.text_field :postal_code %>
+  </p>
+
+  <p>
+    <%= f.label :country %><br/>
+    <%= f.text_field :country %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
