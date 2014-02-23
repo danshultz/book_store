@@ -28,9 +28,7 @@ class ShoppingCart
   end
 
   def total
-    sum = 0
-    books.each { |b| sum += b.price }
-    sum
+    books.reduce(0) { |sum, book| sum += book.price }
   end
 
 end
