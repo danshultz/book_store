@@ -1,1 +1,5 @@
-<%= render :partial => 'checkout_summary' %>
+<%= render( 
+  :partial => 'checkout_summary',
+  :locals => { :addresses => @checkout.addresses, :cart => @checkout.cart }
+)
+%>

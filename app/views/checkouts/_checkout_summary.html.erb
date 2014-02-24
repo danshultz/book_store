@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @checkout.cart.books.each do |book| %>
+    <% cart.books.each do |book| %>
       <tr>
         <td><%= book.title %></td>
         <td><%= book.price %></td>
@@ -18,13 +18,13 @@
 </table>
 
 <p>
-<strong>Total: <%= @checkout.cart.total %></strong>
+<strong>Total: <%= cart.total %></strong>
 </p>
 
-<% unless @checkout.addresses.empty? %>
+<% unless addresses.empty? %>
   <h3>Addresses</h3>
   <ul>
-    <% @checkout.addresses.each do |address| %>
+    <% addresses.each do |address| %>
       <li><%= address.first_name %> <%= address.last_name %></li>
       <li><%= address.address1 %></li>
       <li><%= address.address2 %></li>
