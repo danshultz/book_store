@@ -10,10 +10,6 @@ class CheckoutsController < ApplicationController
 
   def create
 
-    address_params = params
-      .require(:address)
-      .permit(:first_name, :last_name, :address1, :address2, :city, :state, :postal_code, :country)
-
     @address = Address.new(address_params)
 
     if (@address.save)
@@ -28,6 +24,12 @@ class CheckoutsController < ApplicationController
 
     def cart
       @cart ||= ShoppingCart.new(cookies.permanent.signed)
+    end
+
+    def address_params
+      params
+        .require(:address)
+        .permit(:first_name, :last_name, :address1, :address2, :city, :state, :postal_code, :country)
     end
  
 end
