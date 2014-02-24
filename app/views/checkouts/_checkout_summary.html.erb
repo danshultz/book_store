@@ -21,7 +21,7 @@
 <strong>Total: <%= @checkout.cart.total %></strong>
 </p>
 
-<% if (!@checkout.addresses.empty?) %>
+<% unless @checkout.addresses.empty? %>
   <h3>Addresses</h3>
   <ul>
     <% @checkout.addresses.each do |address| %>
