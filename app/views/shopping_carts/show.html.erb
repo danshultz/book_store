@@ -2,6 +2,9 @@
 <% if books.empty? %>
   <div>Your cart is empty</div>
 <% else %>
+  <%= form_tag({ :controller => :checkouts , :action => :new}, :method => :get) do %>
+    <%= submit_tag("Checkout") %>
+  <% end %>
 <table>
   <thead>
     <tr>
@@ -15,7 +18,7 @@
     <td><%= book.title %></td>
     <td><%= book.price %></td>
     <td>
-      <%= form_for(book, :url => shopping_cart_url, :method => :delete) do |f|%>
+      <%= form_for(book, :url => shopping_cart_url, :method => :delete) do |f| %>
         <%= f.hidden_field(:id) %>
         <%= f.submit("Remove from cart") %>
       <% end %>

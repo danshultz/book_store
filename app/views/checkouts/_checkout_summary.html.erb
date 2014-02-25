@@ -1,0 +1,85 @@
+<h1>Checkout Summary</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% cart.books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+<strong>Total: <%= cart.total %></strong>
+</p>
+
+<% unless addresses.empty? %>
+  <h3>Addresses</h3>
+  <ul>
+    <% addresses.each do |address| %>
+      <li><%= address.first_name %> <%= address.last_name %></li>
+      <li><%= address.address1 %></li>
+      <li><%= address.address2 %></li>
+      <li><%= address.city %></li>
+      <li><%= address.state %></li>
+      <li><%= address.postal_code %></li>
+      <li><%= address.country %></li>
+      <br/>
+    <% end %>
+  </ul>
+<% end %>
+
+<h4>Enter a billing address</h4>
+<%= form_for(Address.new, :url => checkout_path)  do |f| %>
+  <p>
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name %>
+  </p>
+
+  <p>
+    <%= f.label :address1 %><br/>
+    <%= f.text_field :address1 %>
+  </p>
+
+  <p>
+    <%= f.label :address2 %><br/>
+    <%= f.text_field :address2 %>
+  </p>
+
+  <p>
+    <%= f.label :city %><br/>
+    <%= f.text_field :city %>
+  </p>
+  
+  <p>
+    <%= f.label :state %><br/>
+    <%= f.text_field :state %>
+  </p>
+
+  <p>
+    <%= f.label :postal_code %><br/>
+    <%= f.text_field :postal_code %>
+  </p>
+
+  <p>
+    <%= f.label :country %><br/>
+    <%= f.text_field :country %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

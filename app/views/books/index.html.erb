@@ -1,5 +1,9 @@
 <h1>Listing books</h1>
 
+<p>
+  <%= link_to 'Shopping Cart', shopping_cart_path %>
+</p>
+
 <table>
   <thead>
     <tr>
@@ -42,7 +46,6 @@
             <%= f.submit("Add to Cart") %>
           <% end %>
         </td>
-        <td><%= link_to 'Add to Cart', book %></td>
         <td><%= link_to 'Show', book %></td>
       </tr>
     <% end %>

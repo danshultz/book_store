@@ -23,4 +23,12 @@ class ShoppingCart
     storage[:shopping_cart_items] = val.join(',')
   end
 
+  def books
+    Book.where(:id => items)
+  end
+
+  def total
+    books.reduce(0) { |sum, book| sum += book.price }
+  end
+
 end
