@@ -18,11 +18,17 @@
 </table>
 
 <p>
-<strong>Total: <%= cart.total %></strong>
+  <strong>Total: <%= cart.total %></strong>
 </p>
 
+<%= form_for(Order.new, :url => order_path) do |f| %>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
 <% unless addresses.empty? %>
-  <h3>Addresses</h3>
+  <h4>Addresses</h4>
   <ul>
     <% addresses.each do |address| %>
       <li><%= address.first_name %> <%= address.last_name %></li>
