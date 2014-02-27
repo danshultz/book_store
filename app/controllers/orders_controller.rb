@@ -16,4 +16,5 @@ class OrdersController < ApplicationController
     def cart
       @cart ||= ShoppingCart.new(cookies.permanent.signed)
     end
+
 end

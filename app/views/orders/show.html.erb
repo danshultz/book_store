@@ -9,3 +9,25 @@
   <strong>Order date:</strong>
   <%= @order.created_at %>
 </p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <strong>Total:</strong>
+  <%= @order.total %>
+</p>
