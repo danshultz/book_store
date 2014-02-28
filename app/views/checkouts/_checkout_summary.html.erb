@@ -21,7 +21,7 @@
   <strong>Total: <%= cart.total %></strong>
 </p>
 
-<%= form_for(Order.new, :url => order_path) do |f| %>
+<%= form_for(Order.new, :url => orders_path) do |f| %>
   <p>
     <%= f.submit %>
   </p>

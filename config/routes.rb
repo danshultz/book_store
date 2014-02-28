@@ -2,7 +2,7 @@ BookStore::Application.routes.draw do
   resources :books, :only => [:index, :show]
   resource :shopping_cart
   resource :checkout
-  resource :order
+  resources :orders
 
   namespace :admin do
     resources :books
