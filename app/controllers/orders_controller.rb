@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_filter :authenticate_user!
 
   def create
 
@@ -8,7 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.where(:user => current_user).find(params[:id])
   end
 
   private
