@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.user(current_user).find(params[:id])
+    @order = Order.by_user(current_user).find(params[:id])
   end
 
   private
